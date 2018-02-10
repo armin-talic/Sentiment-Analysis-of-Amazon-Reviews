@@ -2,7 +2,7 @@
 """
 Created on Sat Feb 10 17:39:52 2018
 
-@author: tarmi
+@author: Armin Talic
 """
 
 # Importing the libraries
@@ -53,3 +53,17 @@ y_pred = classifier.predict(X_test)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+# 72% accuracy
+
+# Fitting Random Forest to the Training set
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier()
+classifier.fit(X_train, y_train)
+
+# Predicting the Test set results
+y_pred = classifier.predict(X_test)
+
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+# 80% accuracy
